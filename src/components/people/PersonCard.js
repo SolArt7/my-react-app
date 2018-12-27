@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {DragSource} from 'react-dnd';
 import {getEmptyImage} from 'react-dnd-html5-backend';
 
-class PersonCard extends React.Component {
+class PersonCard extends Component {
     
     componentDidMount() {
         this.props.connectPreview(getEmptyImage());
@@ -12,7 +12,7 @@ class PersonCard extends React.Component {
         const {person, connectDragSource, isDragging} = this.props;
         const dragStyle = {
             backgroundColor: isDragging ? '#cccccc' : 'white'
-        }
+        };
         return connectDragSource(
             <div className="card my-1" style={dragStyle}>
                 <div className="card-body">
@@ -22,7 +22,7 @@ class PersonCard extends React.Component {
             </div>
         );
     }
-};
+}
 
 const spec = {
     beginDrag(props) {

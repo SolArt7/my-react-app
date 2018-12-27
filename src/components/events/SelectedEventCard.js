@@ -17,8 +17,7 @@ const SelectedEventCard = ({event, connectDropTarget, hovered, canDrop, people})
                     <h5 className="card-title">{event.title}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">{event.when}</h6>
                     <p className="card-text">{event.where}</p>
-                    <button className="card-link">Conference detail</button>
-                    {people.length && <div>Who wil visit:</div>}
+                    {/*<button className="card-link">Conference detail</button>*/}
                     {peopleElements}
                 </div>
             </div>
