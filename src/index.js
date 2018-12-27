@@ -1,5 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'jquery/dist/jquery.min';
+import 'bootstrap/dist/js/bootstrap.bundle';
+
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';

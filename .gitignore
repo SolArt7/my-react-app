@@ -18,6 +18,11 @@
 .env.test.local
 .env.production.local
 
+/TASKS.md
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.vscode/
+.idea/
