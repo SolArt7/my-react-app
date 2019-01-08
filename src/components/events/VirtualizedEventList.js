@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { moduleName, fetchLazy, eventListSelector, selectEvent } from '../../ducks/events';
 import {Table, Column, AutoSizer, InfiniteLoader} from 'react-virtualized';
 import 'react-virtualized/styles.css';
+import RowInTable from './RowInTable'
 
 export class EventList extends Component {
     
@@ -24,23 +25,24 @@ export class EventList extends Component {
                 <td>{event.month}</td>
             </tr>
         )
-    }
+    };
 
     handleRowClick = ({rowData}) => {
         const {selectEvent} = this.props;
         selectEvent && selectEvent(rowData.uid);
-    }
+    };
 
     rowGetter = ({index}) => {
         return this.props.events[index];
-    }
+    };
 
-    isRowLoaded = ({index}) => index < this.props.events.length
+    isRowLoaded = ({index}) => index < this.props.events.length;
 
     loadMoreRows = () => {
-        console.log('----- Load more -----');
         this.props.fetchLazy();
-    }
+    };
+    
+    getRowRenderer = (rowCtx) => <RowInTable {...rowCtx} />;
 
     render() {
         const {loaded, events} = this.props;
@@ -66,6 +68,7 @@ export class EventList extends Component {
                                     height={500}
                                     onRowClick={this.handleRowClick}
                                     onRowsRendered={onRowsRendered}
+                                    rowRenderer={this.getRowRenderer}
                                 >
                                     <Column
                                         label="Title"

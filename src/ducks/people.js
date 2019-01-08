@@ -69,7 +69,7 @@ export default function reducer(state = new ReducerRecord(), action) {
 // selectors
 const stateSelector = state => state[moduleName];
 const peopleGetter = createSelector(stateSelector, people => people.entities);
-const idSelector = (_, props) => props.uid;
+export const idSelector = (_, props) => props.uid;
 export const peopleListSelector = createSelector(peopleGetter, (people) => people.valueSeq().toArray());
 export const personSelector = createSelector(peopleGetter, idSelector, (entities, id) => entities.get(id));
 

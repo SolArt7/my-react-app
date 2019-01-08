@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PeopleCardList from '../people/PeopleCardList';
 import EventList from '../events/VirtualizedEventList';
 import SelectedEvents from '../events/SelectedEvents';
+import Trash from '../events/Trash';
 
 class AdminPage extends Component {
     render() {
@@ -20,6 +21,7 @@ class AdminPage extends Component {
                     <h3 className="text-center">All events</h3>
                     <EventList />
                 </div>
+                <Trash/>
             </div>
         );
     }
